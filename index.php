@@ -2,21 +2,17 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>jQuery One Page Scroll by Pete R. | The Pete Design</title>
+	<title>Dvojčata na útěku | Radim Keith</title>
 	<meta name="title" content="jQuery One Page Scroll by Pete R. | The Pete Design" />
-	<meta name="description" content="Create an Apple-like one page scroller website (iPhone 5S website) with One Page Scroll plugin" />
-	<link rel="image_src" href="/images/notify_better_image.png" />
+	<meta name="description" content="kniha Dvojčata na útěku" />
 
-	<meta content="http://www.thepetedesign.com/demos/onepage_scroll_demo.html" property="og:url" />
-	<meta content="http://www.thepetedesign.com/images/onepage_scroll_image.png" property="og:image" />
+    <!-- font-family: 'Sacramento', cursive; font-family: 'Lato', sans-serif; -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:100|Sacramento&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" id="favicon" href="favicon.png"> 
-	<meta name="author" content="Pete R.">
-	<link rel="canonical" href="http://www.thepetedesign.com/demos/onepage_scroll_demo.html" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Pacifico:400' rel='stylesheet' type='text/css'>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script type="text/javascript" src="jquery.onepage-scroll.js"></script>
-  <link href='onepage-scroll.css' rel='stylesheet' type='text/css'>
+	<meta name="author" content="Radim Keit, Vladimír Mlázovský">
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
+  <link href='css/onepage-scroll.css' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
   <style>
     html {
@@ -26,7 +22,8 @@
       background: #E2E4E7;
       padding: 0;
       text-align: center;
-      font-family: 'open sans';
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: 200;
       position: relative;
       margin: 0;
       height: 100%;
@@ -54,8 +51,9 @@
       color: #000;
       margin-bottom: 5px;
       font-size: 70px;
-      letter-spacing: -4px;
+      letter-spacing:
       font-weight: 100;
+      font-family: 'Sacramento', cursive;
     }
     h1 span {
       font-size: 26px;
@@ -82,30 +80,6 @@
       font-family: 'Pacifico', cursive;
       font-size: 30px;
       margin-top: 15px;
-    }
-    code {
-      margin: 20px 1%;
-      float: left;
-      width: 48%;
-      height: 105px;
-      background: rgba(0,0,0,0.1);
-      border: rgba(0,0,0,0.05) 5px solid;
-      border-radius: 5px;
-      padding:5px;
-      color: white;
-      text-align: center;
-      font-size: 15px;
-      margin-top: 25px;
-      display: block;
-      box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-    }
-    code.html {
-      color: #7EC9E6;
-    }
-    code.js {
-      color: #FFAD00;
     }
 
     .main {
@@ -245,63 +219,56 @@
     }
     
     .main section.page1 {
-      background:rgb(230, 217, 200);
+      background:#FFEBF1;
     }
     .main section.page1 h1 {
       text-align: left;
       padding: 0;
       margin-bottom: 15px;
       font-size: 70px;
-      color: black;
+      color: #E487A3;
     }
     .main section.page1 h2 {
-      color: rgba(0,0,0,0.85);
       text-align: center;
       width: 435px;
       line-height: 160%;
+        color: #E487A3; 
     }
     .main section .page_container .btns {
       clear: both;
-      float: left;
+      float: right;
       text-align: center;
       width: 435px;
     }
     .main section .page_container .btns a{
-      text-align: center;
+      text-align: left;
     }
+
     .main section.page2 {
-      background: #555557 url(back-phone.png) no-repeat center -150px ;
-    }
-    .main section.page2 > img {
-      position: absolute;
-      top: -300px;
-      left: 50%;
-      margin-left: -1095px;
+      background-image: url('img/knizka.jpg');
+      background-size: cover;
     }
     .main section.page2 .page_container {
-      margin-top: 240px;
-      overflow: hidden;
-    }
-    .main section.page2 h1 {
-      text-align: center;
-      padding: 0;
-      margin-bottom: 15px;
-      font-size: 50px;
-      letter-spacing: -1px;
-      color: white;
-    }
-    .main section.page2 h2 {
-      color: rgba(255,255,255,0.85);
-      text-align: center;
-      line-height: 160%;
-      font-weight: 100;
+        top: 5%;
+        float:right;
+        margin-right:15px; 
+        overflow: hidden;
+        color: rgba(255,245,242,0.85);
+        font-size: 19px;
+        text-align: justify;
     }
     .viewing-page-2 .back{
       background: rgba(0, 0, 0, 0.25);
       color: #FFF;
       }
+
+
     .main section.page3 {
-      background:url(tilted-phone.png) no-repeat 156px -150px ;
+      background-image: url('img/bg3.jpg');
+      background-size:cover;
+      background-position: center bottom;
+      color: white;
+      text-shadow: 0 0 5px rgba(0,0,13,1.0);
     }
     .main section.page3 .page_container {
       overflow: hidden;
@@ -314,7 +281,6 @@
       margin-bottom: 0;
       font-size: 70px;
       letter-spacing: -1px;
-      color: black;
     }
     .main section.page3 h2 {
       color: rgba(0,0,0,0.85);
@@ -370,13 +336,21 @@
       margin-right: auto;
       right: 0;
     }
+    .social {
+        position: fixed;
+        right: 6px;
+        top: 6px;
+    }
+    .social img {
+        width: 30px;
+    }
 	</style>
 	<script>
 	  $(document).ready(function(){
       $(".main").onepage_scroll({
         sectionContainer: "section",
-        responsiveFallback: 600,
-        loop: true
+        responsiveFallback: 800,
+        loop: false
       });
 		});
 		
@@ -388,46 +362,30 @@
 	    
       <section class="page1">
         <div class="page_container">
-          <h1>One Page Scroll</h1>
-          <h2>Create an Apple-like one page scroller website (iPhone 5S website) with One Page Scroll plugin</h2>
-          <p class="credit">Created by <a href="http://www.thepetedesign.com">Pete R.</a>, Founder of <a href="http://www.bucketlistly.com" target="_blank">BucketListly</a></p>
-          <div class="btns">
-  	        <a class="reload btn" href="https://github.com/peachananr/onepage-scroll">Download on Github</a>
+        <div>
+          <h1>Dvojčata na útěku</h1>
+          <h2>Radim Keith</h2>
+          <img src="img/nohy.png">
   	      </div>
   	    </div>
-  	    <img src="phones.png" alt="phones">
+  	    
       </section>
 	    
 	    <section class="page2">
-	      <div class="page_container">
-          <h1>Ready-to-use plugin</h1>
-          <h2>All you need is an HTML markup, call the script and BAM!</h2>
-          <code class="html">
-  	        &lt;div class="main"&gt;<br>
-  	          &lt;section&gt;...&lt;/section&gt;<br>
-  	          &lt;section&gt;...&lt;/section&gt;<br>
-  	          ...<br>
-  	        &lt;/div&gt;
-  	      </code>
-  	      
-  	      <code class="js">
-	          $(".main").onepage_scroll();
-	        </code>
-	      </div>
+            <div class="page_container">
+              <p>Začalo jaro a s ním i nucené práce vykoupené krví a bolavými zády na vlastní zahrádce. Na zahrádku jsme vypustili i oba tygry. Běhají mezi krumpáčem, lopatou a hlínou a nedají se zkrotit. I ten řev našich dvojčat nasvědčuje tomu, že se po dalších pár měsíců nastěhovala zuřivá šelma na náš dvůr a jen tak se jí rozhodně nezbavíme. Co si holky ale oblíbily jsou domácí (rozuměj zahradní) zvířátka. Žádný krtek nebo hraboš, ale ke štěstí postačí žížala. Žížala je opečovávaná.</p>
       </section>
 	    
 	    <section class="page3">
 	      <div class="page_container">
-          <h1>Pretty Neat Eh?</h1>
-          <h2>You can customise the animation timing, the selector or even the animation easing using CSS3. I can't wait to see what you guys will come up with. Don't forget to grab them for free on Github'</h2>
-          <div class="btns">
-  	        <a class="reload btn" href="https://github.com/peachananr/onepage-scroll">Download on Github</a>
-  	      </div>
+          <h1>Koupit?</h1>
+          <p>Hledejte na pultech knihkupectví a sledujte Facebookovou stránku.</p>
   	    </div>
       </section>
     </div>
-    <a class="back" href="http://www.thepetedesign.com/#design">Back to The Pete Design</a>
-    <a href="https://github.com/peachananr/onepage-scroll"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <div class="social">
+        <a href="https://www.facebook.com/dvojcatanauteku/" target="_blank" title="Facebook - Dvojčata na útěku"><img src="img/fb.png"></a>
+    </div>
   </div>
 </body>
 </html>
