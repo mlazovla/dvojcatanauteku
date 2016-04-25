@@ -1,3 +1,7 @@
+<?php
+include 'edit/functions.php';
+$s = loadStrings(connectDatabase());
+?>
 <!doctype html>
 <html>
 <head>
@@ -41,7 +45,10 @@
       text-decoration: none;
     }
     
-    
+    .page_container {
+        overflow: hidden;
+    }
+
     h1, h2 {
       width: 100%;
       float: left;
@@ -69,8 +76,7 @@
       padding: 3px 10px;
     }
     h2 {
-      color: #6D461D;
-      font-weight: 100;
+      font-weight: 200;
       margin-top: 0;
       margin-bottom: 10px;
     }
@@ -234,15 +240,6 @@
       line-height: 160%;
         color: #E487A3; 
     }
-    .main section .page_container .btns {
-      clear: both;
-      float: right;
-      text-align: center;
-      width: 435px;
-    }
-    .main section .page_container .btns a{
-      text-align: left;
-    }
 
     .main section.page2 {
       background-image: url('img/knizka.jpg');
@@ -283,11 +280,8 @@
       letter-spacing: -1px;
     }
     .main section.page3 h2 {
-      color: rgba(0,0,0,0.85);
       text-align: left;
       line-height: 160%;
-      font-weight: 100;
-      font-size: 21px;
     }
     
     body.disabled-onepage-scroll .onepage-wrapper  section {
@@ -358,30 +352,24 @@
 </head>
 <body>
   <div class="wrapper">
-	  <div class="main">
-	    
-      <section class="page1">
-        <div class="page_container">
-        <div>
-          <h1>Dvojčata na útěku</h1>
-          <h2>Radim Keith</h2>
-          <img src="img/nohy.png">
-  	      </div>
-  	    </div>
-  	    
-      </section>
-	    
-	    <section class="page2">
-            <div class="page_container">
-              <p>Začalo jaro a s ním i nucené práce vykoupené krví a bolavými zády na vlastní zahrádce. Na zahrádku jsme vypustili i oba tygry. Běhají mezi krumpáčem, lopatou a hlínou a nedají se zkrotit. I ten řev našich dvojčat nasvědčuje tomu, že se po dalších pár měsíců nastěhovala zuřivá šelma na náš dvůr a jen tak se jí rozhodně nezbavíme. Co si holky ale oblíbily jsou domácí (rozuměj zahradní) zvířátka. Žádný krtek nebo hraboš, ale ke štěstí postačí žížala. Žížala je opečovávaná.</p>
-      </section>
-	    
-	    <section class="page3">
-	      <div class="page_container">
-          <h1>Koupit?</h1>
-          <p>Hledejte na pultech knihkupectví a sledujte Facebookovou stránku.</p>
-  	    </div>
-      </section>
+    <div class="main">
+	  
+<?php
+$slides = (isset($s['slides_count']) && $s['slides_count']['value'] && is_numeric($s['slides_count']['value'])) ? $s['slides_count']['value'] : 3;
+    for ($i=1; $i <= $slides; $i++) { 
+        echo '
+            <section class="page'.$i.'">
+                <div class="page_container">
+                    <div>';
+        if (isset($s['page'.$i.'_h1']) && $s['page'.$i.'_h1']['value']) echo "<h1>".$s['page'.$i.'_h1']['value']."</h1>";
+        if (isset($s['page'.$i.'_h2']) && $s['page'.$i.'_h2']['value']) echo "<h2>".$s['page'.$i.'_h2']['value']."</h2>";
+        if (isset($s['page'.$i.'_content']) && $s['page'.$i.'_content']['value']) echo $s['page'.$i.'_content']['value'];
+        echo '           </div>
+                </div>
+            </section>';
+    }
+?>  
+      
     </div>
     <div class="social">
         <a href="https://www.facebook.com/dvojcatanauteku/" target="_blank" title="Facebook - Dvojčata na útěku"><img src="img/fb.png"></a>
