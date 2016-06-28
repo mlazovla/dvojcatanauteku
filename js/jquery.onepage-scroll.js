@@ -27,7 +27,8 @@
     afterMove: null,
     loop: true,
     responsiveFallback: false,
-    direction : 'vertical'
+    direction: 'vertical',
+    sensitivity: 50
   };
 
   /*------------------------------------------------*/
@@ -58,19 +59,19 @@
             var deltaX = startX - touches[0].pageX;
             var deltaY = startY - touches[0].pageY;
 
-            if (deltaX >= 50) {
+            if (deltaX >= defaults.sensitivity) {
               $this.trigger("swipeLeft");
             }
-            if (deltaX <= -50) {
+            if (deltaX <= -defaults.sensitivity) {
               $this.trigger("swipeRight");
             }
-            if (deltaY >= 50) {
+            if (deltaY >= defaults.sensitivity) {
               $this.trigger("swipeUp");
             }
-            if (deltaY <= -50) {
+            if (deltaY <= -defaults.sensitivity) {
               $this.trigger("swipeDown");
             }
-            if (Math.abs(deltaX) >= 50 || Math.abs(deltaY) >= 50) {
+            if (Math.abs(deltaX) >= defaults.sensitivity || Math.abs(deltaY) >= defaults.sensitivity) {
               $this.unbind('touchmove', touchmove);
             }
           }

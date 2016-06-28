@@ -39,10 +39,14 @@ switch ($tmp)
 	case 'slajdy':
 		$page = 'slajdy';
 		setcookie('editace_str',  'slajdy');
-		break;		
+		break;
+	case 'prispevky':
+		$page = 'prispevky';
+		setcookie('editace_str',  'prispevky');
+		break;
 	default:
-		$page = 'slajdy';
-		setcookie('editace_str',  'slajdy');
+		$page = 'prispevky';
+		setcookie('editace_str',  'prispevky');
 		break;
 }
 unset($tmp);
@@ -76,6 +80,7 @@ $post = (!empty($_POST)) ? true : false;
 	table th, table td { border: 1px solid silver }
 	.btn {border:1px solid #555; box-shadow: 1px 1px 2px #AAA,inset 0px 2px 2px white,inset -1px -1px 2px #ccc; padding: 5px 7px; margin-bottom: 5px; border-radius: 5px; color: #333; text-decoration: none; background-color: #EEE; display: inline-block;}
 	.btn:hover {box-shadow: inset 0px 2px 2px silver; color: black;}
+	.btn-danger {border:1px solid #F55; box-shadow: 1px 1px 2px #AAA,inset 0px 2px 2px #C33,inset -1px -1px 2px #Fcc; padding: 5px 7px; margin-bottom: 5px; border-radius: 5px; color: #F33; text-decoration: none; background-color: #FDD; display: inline-block;}
 	.float-right {float: right}
 </style>
 

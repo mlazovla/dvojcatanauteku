@@ -283,7 +283,42 @@ $s = loadStrings(connectDatabase());
       text-align: left;
       line-height: 160%;
     }
-    
+
+	.main section.page3 a {
+		color: white;
+		text-decoration: underline;
+	}
+
+	.main section.page4 .page_container {
+		top: 10px;
+	}
+	.main section.page4 {
+		background:#221133;
+		background-image: url('img/bg4.jpg');
+		background-size:cover;
+		background-position: center bottom;
+		color: white;
+	}
+
+	.main section.page4 img{
+		width:80%;
+		max-width: 300px;
+	}
+
+	.main section.page4 h1 {
+		text-align: left;
+		padding: 0;
+		margin-bottom: 15px;
+		font-size: 70px;
+		color: #E487A3;
+	}
+	.main section.page4 h2 {
+		text-align: center;
+		width: 435px;
+		line-height: 160%;
+		color: #E487A3;
+	}
+
     body.disabled-onepage-scroll .onepage-wrapper  section {
       min-height: 100%;
       height: auto;
@@ -338,7 +373,47 @@ $s = loadStrings(connectDatabase());
     .social img {
         width: 30px;
     }
-	</style>
+
+	@media (min-width: 769px) {
+		.mobile-only {
+			display: none;
+		}
+	}
+	@media (max-width: 768px) {
+		.desktop-only {
+			display: none;
+		}
+	}
+
+	  .button {
+		  background: #DDDDDD;
+		  border-top: 2px solid white;
+		  border-bottom: 2px solid #AAAAAA;
+		  border-left: 2px solid #CCCCCC;
+		  border-right: 2px solid #CCCCCC;
+		  font-weight: 800;
+		  cursor: pointer;
+		  box-shadow: 0px 2px 2px rgba(50,50,70,0.5);
+		  font-color: #333;
+		  text-shadow: 0px -1px 0px rgba(255,255,255,0.5), 0px 1px 0px rgba(50,50,55,0.2);
+	  }
+	  .button:hover {
+		  border-top: 2px solid #AAAAAA;
+		  border-bottom: 2px solid white;
+		  box-shadow: 0px 2px 2px rgba(50,50,70,0.5) inset;
+		  font-color: black;
+	  }
+	  .circle {
+		  border-radius: 100%;
+		  width: 40px;
+		  height: 40px;
+		  text-align: center;
+		  box-sizing: border-box;
+		  padding-top: 4px;
+		  font-size: 20px
+	  }
+
+  </style>
 	<script>
 	  $(document).ready(function(){
       $(".main").onepage_scroll({
@@ -355,18 +430,22 @@ $s = loadStrings(connectDatabase());
     <div class="main">
 	  
 <?php
-$slides = (isset($s['slides_count']) && $s['slides_count']['value'] && is_numeric($s['slides_count']['value'])) ? $s['slides_count']['value'] : 3;
-    for ($i=1; $i <= $slides; $i++) { 
-        echo '
-            <section class="page'.$i.'">
-                <div class="page_container">
-                    <div>';
-        if (isset($s['page'.$i.'_h1']) && $s['page'.$i.'_h1']['value']) echo "<h1>".$s['page'.$i.'_h1']['value']."</h1>";
-        if (isset($s['page'.$i.'_h2']) && $s['page'.$i.'_h2']['value']) echo "<h2>".$s['page'.$i.'_h2']['value']."</h2>";
-        if (isset($s['page'.$i.'_content']) && $s['page'.$i.'_content']['value']) echo $s['page'.$i.'_content']['value'];
-        echo '           </div>
-                </div>
-            </section>';
+    $slides = (isset($s['slides_count']) && $s['slides_count']['value'] && is_numeric($s['slides_count']['value'])) ? $s['slides_count']['value'] : 3;
+    for ($i=1; $i <= $slides; $i++) {
+		if ($i == 2) {
+			include('inc/calendar.php');
+		} else {
+			echo '
+				<section class="page' . $i . '">
+					<div class="page_container">
+						<div>';
+			if (isset($s['page' . $i . '_h1']) && $s['page' . $i . '_h1']['value']) echo "<h1>" . $s['page' . $i . '_h1']['value'] . "</h1>";
+			if (isset($s['page' . $i . '_h2']) && $s['page' . $i . '_h2']['value']) echo "<h2>" . $s['page' . $i . '_h2']['value'] . "</h2>";
+			if (isset($s['page' . $i . '_content']) && $s['page' . $i . '_content']['value']) echo $s['page' . $i . '_content']['value'];
+			echo '           </div>
+					</div>
+				</section>';
+		}
     }
 ?>  
       

@@ -29,4 +29,15 @@ function loadStrings($mysqli) {
 	return $ret;
 }
 
+
+function loadPosts($mysqli, $limit=50) {
+	$ret = array();
+	$res = $mysqli->query("SELECT * FROM posts ORDER BY id DESC LIMIT 0,$limit");
+
+	while ($row = $res->fetch_array(MYSQL_BOTH))
+	{
+		$ret[$row['id']] = ["date" => new DateTime($row['date']), "content" => $row['content']];
+	}
+	return $ret;
+}
 ?>
