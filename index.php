@@ -7,17 +7,28 @@ $s = loadStrings(connectDatabase());
 <head>
 	<meta charset="utf-8">
 	<title>Dvojčata na útěku | Radim Keith</title>
-	<meta name="title" content="jQuery One Page Scroll by Pete R. | The Pete Design" />
-	<meta name="description" content="kniha Dvojčata na útěku" />
+	<meta name="title" content="Dvojčata na útěku | Radim Keith" />
+	<meta name="description" content="Kniha Dvojčata na útěku, aneb život otce na rodičovské" />
 
     <!-- font-family: 'Sacramento', cursive; font-family: 'Lato', sans-serif; -->
     <link href='https://fonts.googleapis.com/css?family=Lato:100|Sacramento&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" id="favicon" href="favicon.ico">
-	<meta name="author" content="Radim Keit, Vladimír Mlázovský">
+	<meta name="author" content="Radim Keith">
 	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
-  <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
-  <link href='css/onepage-scroll.css' rel='stylesheet' type='text/css'>
-  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	  <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
+	  <link href='css/onepage-scroll.css' rel='stylesheet' type='text/css'>
+	  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+	<!-- FACEBOOK -->
+	<meta property="og:image" content="http://dvojcatanauteku.eu/img/nohy.png">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="486">
+	<meta property="og:image:height" content="616">
+	<meta property="og:url" content="http://dvojcatanauteku.eu">
+	<meta property="og:title" content="Dvojčata na útěku">
+	<meta property="og:description" content="Kniha Dvojčata na útěku, aneb život otce na rodičovské">
+
+
   <style>
     html {
       height: 100%;
@@ -231,7 +242,7 @@ $s = loadStrings(connectDatabase());
       background:#FFEBF1;
     }
     .main section.page1 h1 {
-      text-align: left;
+      text-align: center;
       padding: 0;
       margin-bottom: 15px;
       font-size: 70px;
@@ -239,10 +250,15 @@ $s = loadStrings(connectDatabase());
     }
     .main section.page1 h2 {
       text-align: center;
-      width: 435px;
       line-height: 160%;
-        color: #E487A3; 
+	  color: black;
     }
+	.main section.page1 img {
+		margin-top: 30px;
+	}
+	.main section.page1 .headline {
+		width: 435px;
+	}
 
     .main section.page2 {
       background-image: url('img/knizka.jpg');
@@ -322,7 +338,12 @@ $s = loadStrings(connectDatabase());
 		color: #E487A3;
 	}
 
-    body.disabled-onepage-scroll .onepage-wrapper  section {
+	.main section.page4 h1 {
+		color: white;
+	}
+
+
+	body.disabled-onepage-scroll .onepage-wrapper  section {
       min-height: 100%;
       height: auto;
     }
@@ -389,6 +410,12 @@ $s = loadStrings(connectDatabase());
 		h1 small {
 			font-size: 29px;
 		}
+		.main section.page1 img {
+			margin-top: 0px;
+		}
+		.main section.page1 .headline {
+			width: auto;
+		}
 	}
 
 	  .button {
@@ -444,11 +471,13 @@ $s = loadStrings(connectDatabase());
 			echo '
 				<section class="page' . $i . '">
 					<div class="page_container">
-						<div>';
+						<div>
+							<div class="headline">';
 			if (isset($s['page' . $i . '_h1']) && $s['page' . $i . '_h1']['value']) echo "<h1>" . $s['page' . $i . '_h1']['value'] . "</h1>";
 			if (isset($s['page' . $i . '_h2']) && $s['page' . $i . '_h2']['value']) echo "<h2>" . $s['page' . $i . '_h2']['value'] . "</h2>";
+			echo "</div>";
 			if (isset($s['page' . $i . '_content']) && $s['page' . $i . '_content']['value']) echo $s['page' . $i . '_content']['value'];
-			echo '           </div>
+			echo '      </div>
 					</div>
 				</section>';
 		}

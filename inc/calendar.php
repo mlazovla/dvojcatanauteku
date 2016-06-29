@@ -28,7 +28,7 @@
 
 	.calendar-event {
 		text-align: left;
-		border-top: 2px solid rgba(0,0,0,0.5);
+		border-top: 5px double rgba(0,0,0,0.5);
 		width: 100%;
 		display: inline-flex;
 		font-size: small;
@@ -36,7 +36,7 @@
 		font-weight: 400;
 
 		padding: 3px 3px;
-		margin-bottom: 7px;
+		margin-bottom: 13px;
 		border-radius: 0 0 3px 3px;
 		box-shadow: 0 1px 1px rgba(123,140,160,0.2);
 	}
@@ -46,9 +46,8 @@
 	.calendar-event:nth-child(4n+3) {  background-color: rgba(200,255,255,0.2);  }
 
 	.calendar-event .date {
-		color: rgba(0,0,0,0.6);
-		float: right;
-		display: inline-block;
+		color: rgba(0,0,0,1);
+		display: block;
 		font-weight: 600;
 		font-size: smaller;
 	}
