@@ -60,7 +60,7 @@ while ($row = $res->fetch_array(MYSQL_BOTH))
 {
 	echo '<tr>
 			<td>'. strip_tags($row['description']).'</td>
-			<td>'. substr(strip_tags($row['value']), 0, 50).'</td>
+			<td>'. mb_substr(strip_tags($row['value']), 0, 50, 'UTF-8').'</td>
 			<td><a href="?edit='. $row['code'] . '" class="btn float-right">upravit</a></td>
 		</tr>';
 }

@@ -12,7 +12,7 @@ $s = loadStrings(connectDatabase());
 
     <!-- font-family: 'Sacramento', cursive; font-family: 'Lato', sans-serif; -->
     <link href='https://fonts.googleapis.com/css?family=Lato:100|Sacramento&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-	<link rel="shortcut icon" id="favicon" href="favicon.png"> 
+	<link rel="shortcut icon" id="favicon" href="favicon.ico">
 	<meta name="author" content="Radim Keit, Vladimír Mlázovský">
 	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>
@@ -75,6 +75,9 @@ $s = loadStrings(connectDatabase());
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
       padding: 3px 10px;
     }
+	h1 small {
+		font-size: 35px;
+	}
     h2 {
       font-weight: 200;
       margin-top: 0;
@@ -326,7 +329,7 @@ $s = loadStrings(connectDatabase());
     
     body.disabled-onepage-scroll .main section .page_container, body.disabled-onepage-scroll .main section.page3 .page_container  {
       padding: 20px;
-      margin-top: 150px;
+      margin-top: 25px;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
@@ -382,6 +385,9 @@ $s = loadStrings(connectDatabase());
 	@media (max-width: 768px) {
 		.desktop-only {
 			display: none;
+		}
+		h1 small {
+			font-size: 29px;
 		}
 	}
 
