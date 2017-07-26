@@ -80,8 +80,8 @@ if (count($values)) {
 
 		mail( $values['email'], 'Vaše objednávka z dvojcatanauteku.cz', $clientMessage,
 			implode("\r\n", array_merge($headers, ['To: <'.$values['email'].'>'])) );
-		mail('vml@seznam.cz', 'Nová objednávka z dvojcatanauteku.cz', $adminMessage,
-			implode("\r\n", array_merge($headers, ['To: <vml@seznam.cz>'])) ); // Radim.Keith@seznam.cz
+		mail('Radim.Keith@seznam.cz', 'Nová objednávka z dvojcatanauteku.cz', $adminMessage,
+			implode("\r\n", array_merge($headers, ['To: <Radim.Keith@seznam.cz>'])) );
 		
 		header("Location: http://dvojcatanauteku.cz/zakoupit/thankyou.php");
 		die();
