@@ -48,19 +48,23 @@ if (count($values)) {
 		$headers = [
 			'MIME-Version: 1.0',
 			'Content-type: text/html; utf-8',
-		
 			'From: dvojcatanauteku.cz <info@dvojcatanauteku.cz>'
 		];
-		$messageHead = "<html><head><title>Objednávka z webu dvojcatanauteku</title></head><body>";
+		$messageHead = "<html><head><meta charset=\"utf-8\"><title>Objednávka z webu dvojcatanauteku</title></head><body>";
 		$messageTail = "</body></html>";
 		$summary = '<table>';
 		foreach ($form as $name => $row) {
+		    if ($name=='sent') {
+		        continue;
+            }
 			if ($values[$name]) {
-				$summary .= '<tr><th>'.$row['l'].': </th><td>'.$values[$name]."</td></tr>\n";
+				$summary .= '<tr><th align="left">'.$row['l'].': </th><td>'.$values[$name]."</td></tr>\n";
 			}
 		}
 		$summary .= '</table>';
-		file_put_contents('objednavky/'.date('Y-m-d_H:i:s').'.txt', strip_tags($summary)."\n Cena: ".$totalPrice.' Kč'); // log file
+		$filename = 'objednavky/'.date('Y-m-d_H:i:s').'.txt';
+		file_put_contents($filename, "\xEF\xBB\xBF".strip_tags($summary)."\n Cena: ".$totalPrice.' Kč'); // log file
+        chmod($filename, 0664);
 
 		$adminMessage = $messageHead
 			."<p>Na webu dvojcatanauteku.cz byla právě vytvořena objednávka s následujícími parametry.</p><br/>\n<br/>\n"
@@ -76,12 +80,10 @@ if (count($values)) {
 
 		mail( $values['email'], 'Vaše objednávka z dvojcatanauteku.cz', $clientMessage,
 			implode("\r\n", array_merge($headers, ['To: <'.$values['email'].'>'])) );
-		/*mail($values['email'], 'Nová objednávka z dvojcatanauteku.cz', $adminMessage,
-			implode("\r\n", array_merge($headers, ['To: <Radim.Keith@seznam.cz>']));*/
-		mail( $values['email'], 'Nová objednávka z dvojcatanauteku.cz', $adminMessage,
-			implode("\r\n", array_merge($headers, ['To: <vml@seznam.cz>'])) );
+		mail('vml@seznam.cz', 'Nová objednávka z dvojcatanauteku.cz', $adminMessage,
+			implode("\r\n", array_merge($headers, ['To: <vml@seznam.cz>'])) ); // Radim.Keith@seznam.cz
 		
-		header("Location: http://localhost/dvojcatanauteku.cz/zakoupit/thankyou.php");
+		header("Location: http://dvojcatanauteku.cz/zakoupit/thankyou.php");
 		die();
 	}
 }
