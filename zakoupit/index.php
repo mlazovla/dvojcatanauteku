@@ -55,8 +55,9 @@ if (count($values)) {
 		$messageTail = "</body></html>";
 		$summary = '<table>';
 		foreach ($form as $name => $row) {
+		    if ($name='sent') continue;
 			if ($values[$name]) {
-				$summary .= '<tr><th>'.$row['l'].': </th><td>'.$values[$name]."</td></tr>\n";
+				$summary .= '<tr><th align="left">'.$row['l'].': </th><td>'.$values[$name]."</td></tr>\n";
 			}
 		}
 		$summary .= '</table>';
@@ -76,10 +77,8 @@ if (count($values)) {
 
 		mail( $values['email'], 'Vaše objednávka z dvojcatanauteku.cz', $clientMessage,
 			implode("\r\n", array_merge($headers, ['To: <'.$values['email'].'>'])) );
-		/*mail($values['email'], 'Nová objednávka z dvojcatanauteku.cz', $adminMessage,
-			implode("\r\n", array_merge($headers, ['To: <Radim.Keith@seznam.cz>']));*/
-		mail( $values['email'], 'Nová objednávka z dvojcatanauteku.cz', $adminMessage,
-			implode("\r\n", array_merge($headers, ['To: <vml@seznam.cz>'])) );
+		mail($values['email'], 'Nová objednávka z dvojcatanauteku.cz', $adminMessage,
+			implode("\r\n", array_merge($headers, ['To: <Radim.Keith@seznam.cz>'])) );
 		
 		header("Location: http://localhost/dvojcatanauteku.cz/zakoupit/thankyou.php");
 		die();
