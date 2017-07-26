@@ -44,6 +44,10 @@ switch ($tmp)
 		$page = 'prispevky';
 		setcookie('editace_str',  'prispevky');
 		break;
+	case 'objednavky':
+		$page = 'objednavky';
+		setcookie('editace_str',  'objednavky');
+		break;
 	default:
 		$page = 'prispevky';
 		setcookie('editace_str',  'prispevky');
@@ -65,7 +69,7 @@ $post = (!empty($_POST)) ? true : false;
 <meta charset="utf-8" />
 
 <style>
-	body, html {padding: 0, 0, 0, 0; margin: 0 0 0 0;}
+	body, html {padding: 0 0 0 0; margin: 0 0 0 0;}
 	header {background-color: #F49; color:white; padding: 5px 5px 5px 5px; font-family: sans-serif; font-weight: lighter; letter-spacing: 2px;}
 	header .logout {float:right; color:white;}
 	.main {padding: 5px 5px 5px 5px; width: 100%; max-width: 800px; margin: auto auto; font-family: 'Calibri', sans-serif;}

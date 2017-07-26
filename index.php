@@ -20,11 +20,11 @@ $s = loadStrings(connectDatabase());
 	  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
 
 	<!-- FACEBOOK -->
-	<meta property="og:image" content="http://dvojcatanauteku.eu/img/nohy.png">
+	<meta property="og:image" content="http://dvojcatanauteku.cz/img/nohy.png">
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="486">
 	<meta property="og:image:height" content="616">
-	<meta property="og:url" content="http://dvojcatanauteku.eu">
+	<meta property="og:url" content="http://dvojcatanauteku.cz">
 	<meta property="og:title" content="Dvojčata na útěku">
 	<meta property="og:description" content="Kniha Dvojčata na útěku, aneb život otce na rodičovské">
 
@@ -486,6 +486,9 @@ $s = loadStrings(connectDatabase());
       
     </div>
     <div class="social">
+		<a href="http://www.toplist.cz/" target="_top">
+			<img src="https://toplist.cz/dot.asp?id=1719898" border="0" alt="TOPlist" width="1" height="1" />
+		</a>
         <a href="https://www.facebook.com/dvojcatanauteku/" target="_blank" title="Facebook - Dvojčata na útěku"><img src="img/fb.png"></a>
     </div>
   </div>
