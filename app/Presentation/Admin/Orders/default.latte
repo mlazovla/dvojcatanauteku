@@ -1,0 +1,10 @@
+{block title}Objednávky{/block}
+
+{block content}
+<h1>Objednávky</h1>
+{var $count = count($orders)}
+<p n:foreach="$orders as $order">
+	{$count - $iterator->counter0}. <a n:href="show $order">{substr($order, 0, -4)}</a>
+</p>
+<p n:if="!$orders">Zatím žádné objednávky.</p>
+{/block}

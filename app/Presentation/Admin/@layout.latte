@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="cs">
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex, nofollow">
+	<title>Editace dvojcatanauteku.cz</title>
+	<link href="{$basePath}/css/admin.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		dvojcatanauteku.cz &gt; EDITACE &gt; {include title}
+		<a n:if="$user->isLoggedIn()" class="logout" n:href="Sign:out">odhlásit</a>
+	</header>
+	<div class="main">
+		<div n:foreach="$flashes as $flash" class="notification">{$flash->message}</div>
+		<div n:if="$user->isLoggedIn()" class="navigation">
+			<a n:href="Slides:">Části stránky</a> |
+			<a n:href="Posts:">Příspěvky</a> |
+			<a n:href="Orders:">Objednávky</a>
+		</div>
+
+		{include content}
+	</div>
+</body>
+</html>

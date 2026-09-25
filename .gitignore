@@ -1,5 +1,11 @@
 .DS_Store
-.idea
-/edit/settings.php
-/zakoupit/objednavky
-/backup_*.sql
+/.idea
+/vendor
+/config/local.neon
+/log/*
+!/log/.gitignore
+/temp/*
+!/temp/.gitignore
+/data/orders/*
+!/data/orders/.gitignore
+/docker-compose.override.yml

@@ -1,0 +1,67 @@
+parameters:
+	database:
+		host: db
+		dbname: dvojcata
+		user: dvojcata
+		password: dvojcata
+
+	admin:
+		passwordHashes: []
+
+	order:
+		priceBook: 220
+		pricePost: 130
+		fromEmail: info@dvojcatanauteku.cz
+		fromName: dvojcatanauteku.cz
+		notificationEmail: Radim.Keith@seznam.cz
+		contactEmail: info@dvojcatanauteku.cz
+		contactPhone: 774 907 657
+
+
+application:
+	errorPresenter:
+		4xx: Error:Error4xx
+		5xx: Error:Error5xx
+	mapping: App\Presentation\*\**Presenter
+
+
+database:
+	dsn: 'mysql:host=%database.host%;dbname=%database.dbname%;charset=utf8mb4'
+	user: %database.user%
+	password: %database.password%
+	options:
+		lazy: yes
+
+
+forms:
+	messages:
+		Filled: 'Vyplňte prosím pole %label.'
+		Email: 'Zkontrolujte prosím Vaši emailovou adresu.'
+		Integer: 'Zadejte prosím celé číslo.'
+		Range: 'Zadejte prosím hodnotu mezi %d a %d.'
+		MaxLength: 'Zadejte prosím nejvýše %d znaků.'
+		MinLength: 'Zadejte prosím alespoň %d znaků.'
+
+
+latte:
+	strictTypes: yes
+	strictParsing: yes
+
+
+session:
+	expiration: 14 days
+
+
+security:
+	authentication:
+		expiration: 14 days
+
+
+php:
+	date.timezone: Europe/Prague
+
+
+di:
+	export:
+		parameters: no
+		tags: no

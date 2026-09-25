@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Objednávka z webu dvojcatanauteku.cz</title>
+</head>
+<body>
+	{if $forCustomer}
+		<p>Na webu dvojcatanauteku.cz jste vytvořil/a objednávku. Prosím zkontrolujte správnost údajů, v případě pochybení nás ihned kontaktujte na {$contactEmail} nebo telefonicky na {$contactPhone}.</p>
+	{else}
+		<p>Na webu dvojcatanauteku.cz byla právě vytvořena objednávka s následujícími parametry.</p>
+	{/if}
+	<br>
+
+	<table>
+		<tr n:foreach="$items as $label => $value">
+			<th align="left">{$label}: </th>
+			<td>{$value}</td>
+		</tr>
+	</table>
+
+	<p><big><b>Cena celkem {$totalPrice} Kč</b></big></p>
+
+	<p n:if="$forCustomer">Kniha Vám bude odeslána na dobírku.</p>
+</body>
+</html>

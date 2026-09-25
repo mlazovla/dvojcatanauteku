@@ -1,0 +1,106 @@
+  html {
+    height: 100%;
+  }
+  body {
+    background: rgb(255, 235, 241);;
+    padding: 0 0 0 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    margin: 0 0 0 0;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+  }
+  .main {
+  	width: 100%;
+  	max-width: 400px;
+  	margin: auto auto;
+  }
+  
+  .centered {
+  	text-align: center;
+  }
+  .right {
+  	text-align: right;
+  }
+  .pull-right {
+  	float: right;
+  }
+
+  .order {
+  	width:60%;
+ 		min-width: 200px;
+ 		margin: auto auto;
+  }
+  .order table {
+ 		width:100%;
+ 		min-width: 200px;
+ 		float: right;
+ 		clear: both;
+ 		border-bottom: 3px double #444;
+  }
+  .order table th {
+  	text-align: left;
+  }
+  .priceTotal {
+  	text-align: right;
+  	font-size: 1.2rem;
+  	font-weight: bold;
+  	clear: both;
+  }
+  h1 small {
+  	color: #444;
+  }
+
+  h2 {
+  	font-weight: 200;
+  }
+
+  .form-group {
+  	margin-bottom: 6px;
+  }
+  .form-group label {
+  	font-weight: 400;
+  	font-size: 0.7rem;
+  	letter-spacing: 0.4px;
+  }
+  .form-group input {
+  	width: 60%;
+  	min-width: 200px;
+  	font-size: 1rem;
+  	padding: 3px 5px;
+  }
+  .form-group input[type='number'] {
+  	text-align: right;
+  	min-width: 2em;
+  	width: 2em;
+  }
+  .btn-primary {
+  	text-transform: uppercase;
+  	background-color: royalblue;
+  	color: white;
+  	border: 1px solid darkblue;
+  	font-weight: bold;
+  	padding: 5px 10px;
+  	margin-bottom: 5px;
+  	margin-top: 5px;
+  }
+  .btn-primary:hover {
+  	cursor: pointer;
+  	box-shadow: 0 0 3px rgba(0,0,0,0.4);
+  }
+
+  .orderInfo {
+  	font-size: 0.7rem;
+  }
+  hr {
+  	clear: both;
+  }
+  footer {
+  	padding-bottom: 1em;
+  	text-align: right;
+  }
+  .error {
+  	margin-bottom: 3px;
+  	color: darkred;
+  }
+

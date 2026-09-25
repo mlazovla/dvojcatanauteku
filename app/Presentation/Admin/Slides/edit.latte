@@ -1,0 +1,14 @@
+{block title}Části stránky{/block}
+
+{block content}
+<h1>Části stránky</h1>
+<hr>
+&lt;&lt; <a n:href="default">neukládat</a>
+
+<form n:name="editForm">
+	<h2>Upravit</h2>
+	<p>{$string->description}</p>
+	<textarea n:name="value"></textarea>
+	<input n:name="send">
+</form>
+{/block}

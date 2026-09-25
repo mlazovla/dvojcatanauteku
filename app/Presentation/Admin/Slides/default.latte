@@ -1,0 +1,22 @@
+{block title}Části stránky{/block}
+
+{block content}
+<h1>Části stránky</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Popis</th>
+			<th>Obsah</th>
+			<th>Nástroje</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr n:foreach="$strings as $string">
+			<td>{$string->description|stripHtml}</td>
+			<td>{$string->value|stripHtml|truncate:50}</td>
+			<td><a n:href="edit $string->code" class="btn float-right">upravit</a></td>
+		</tr>
+	</tbody>
+</table>
+{/block}

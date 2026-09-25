@@ -1,0 +1,33 @@
+{block title}Příspěvky{/block}
+
+{block content}
+<h1>Příspěvky</h1>
+
+<form n:name="postForm">
+	<h2>Nový příspěvek do občasníku</h2>
+	<div n:foreach="$form->getErrors() as $error" class="error">{$error}</div>
+	<textarea n:name="content"></textarea>
+	<input n:name="send">
+</form>
+
+<h2>Upravit existující</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Datum</th>
+			<th>Příspěvek</th>
+			<th>Nástroje</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr n:foreach="$posts as $post">
+			<td>{$post->date|date:'j.n.Y H:i'}</td>
+			<td>{$post->content|stripHtml|truncate:50}</td>
+			<td>
+				<a n:href="delete! $post->id" class="btn btn-danger float-right" onclick="return confirm('Opravdu smazat?')">odstranit</a>
+				<a n:href="edit $post->id" class="btn float-right">upravit</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+{/block}

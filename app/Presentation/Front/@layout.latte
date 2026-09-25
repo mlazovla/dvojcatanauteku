@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="cs">
+<head>
+	<meta charset="utf-8">
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Dvojčata na útěku | Radim Keith</title>
+	<meta name="description" content="{ifset description}{include description|stripHtml}{else}Kniha Dvojčata na útěku, aneb život otce na rodičovské{/ifset}">
+	<meta name="author" content="Radim Keith">
+	<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:100|Sacramento&subset=latin-ext,latin" rel="stylesheet">
+	<link rel="shortcut icon" id="favicon" href="{$basePath}/favicon.ico">
+
+	<meta property="og:image" content="https://dvojcatanauteku.cz/img/nohy.png">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="486">
+	<meta property="og:image:height" content="616">
+	<meta property="og:url" content="https://dvojcatanauteku.cz">
+	<meta property="og:title" content="Dvojčata na útěku">
+	<meta property="og:description" content="Kniha Dvojčata na útěku, aneb život otce na rodičovské">
+
+	<script src="{$basePath}/js/jquery-1.9.1.js"></script>
+	{block head}{/block}
+</head>
+<body>
+	{include content}
+</body>
+</html>

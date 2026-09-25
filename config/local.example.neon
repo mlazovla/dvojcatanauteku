@@ -1,0 +1,19 @@
+# Zkopírujte do config/local.neon (make init) a upravte.
+# Hash hesla do administrace vygeneruje: make password-hash
+
+parameters:
+	admin:
+		passwordHashes:
+			- '$2y$12$REPLACE_WITH_HASH'
+
+#	database:
+#		host: localhost
+#		dbname: dvojcatanauteku
+#		user: dvojcatanauteku
+#		password: ''
+
+# Vývoj v Dockeru: e-maily zachytává Mailpit (http://localhost:8025)
+mail:
+	smtp: true
+	host: mailpit
+	port: 1025

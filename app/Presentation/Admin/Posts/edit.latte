@@ -1,0 +1,15 @@
+{block title}Příspěvky{/block}
+
+{block content}
+<h1>Příspěvky</h1>
+<hr>
+&lt;&lt; <a n:href="default">neukládat</a>
+
+<form n:name="postForm">
+	<h2>Upravit</h2>
+	<p>{$post->date|date:'H:i j.n.Y'}</p>
+	<div n:foreach="$form->getErrors() as $error" class="error">{$error}</div>
+	<textarea n:name="content"></textarea>
+	<input n:name="send">
+</form>
+{/block}

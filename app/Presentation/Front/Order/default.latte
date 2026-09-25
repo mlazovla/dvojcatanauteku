@@ -1,0 +1,55 @@
+{block title}Zakoupit{/block}
+{block description}Zakoupit knihu Dvojčata na útěku, aneb život otce na rodičovské{/block}
+
+{block content}
+<div class="main">
+	Zakoupit
+	<h1>
+		Dvojčata na útěku,<br>
+		<small>aneb život otce na rodičovské</small>
+	</h1>
+	<div class="centered"><i>Radim Keith</i></div>
+	<hr>
+	<form n:name="orderForm">
+		<div n:foreach="$form->getOwnErrors() as $error" class="error">{$error}</div>
+		{include row, input: $form['amount']}
+		<hr>
+
+		<h2>Dodací adresa</h2>
+		{foreach ['name', 'surname', 'street', 'streetNo', 'city', 'zip', 'country', 'phone', 'email'] as $field}
+			{include row, input: $form[$field]}
+		{/foreach}
+
+		<hr>
+
+		<h2>Objednávka</h2>
+		<div class="order" data-price-book="{$priceBook}" data-price-post="{$pricePost}">
+			<table>
+				<tr><th>Kniha</th><td id="amountTable">1x</td><td class="right" id="priceTable">{$priceBook} Kč</td></tr>
+				<tr><th>Poštovné</th><td></td><td class="right">{$pricePost} Kč</td></tr>
+			</table>
+
+			<div class="priceTotal" id="priceTotal">{$priceBook + $pricePost} Kč</div>
+		</div>
+
+		<hr>
+
+		<div class="orderInfo">Objednávka Vám bude potvrzena emailem a zaslána na dobírku na výše uvedenou adresu.</div>
+		<input n:name="sent" class="btn-primary"><br>
+	</form>
+	<hr>
+	<footer>
+		Radim Keith 2017
+	</footer>
+</div>
+
+<script src="{$basePath}/js/order.js"></script>
+{/block}
+
+{define row, Nette\Forms\Controls\BaseControl $input}
+	<div n:foreach="$input->getErrors() as $error" class="error">{$error}</div>
+	<div class="form-group">
+		<label n:name="$input" /><br>
+		<input n:name="$input">
+	</div>
+{/define}

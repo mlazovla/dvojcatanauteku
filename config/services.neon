@@ -1,0 +1,6 @@
+services:
+	- App\Core\RouterFactory::createRouter
+	- App\Model\AdminAuthenticator(%admin.passwordHashes%)
+	- App\Model\PostRepository
+	- App\Model\StringRepository
+	- App\Model\OrderService(%rootDir%/data/orders, %order%)
