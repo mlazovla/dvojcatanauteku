@@ -254,7 +254,7 @@ if (count($values)) {
       		<div class="order">
       			<table>
       				<tr><th>Kniha</th><td id='amountTable'>1x</td><td class="right" id='priceTable'><?php echo $priceBook; ?> Kč</td></tr>
-      				<tr><th>Dobírka</th><td></td><td class="right"><?php echo $pricePost; ?> Kč</td></tr>
+      				<tr><th>Poštovné</th><td></td><td class="right"><?php echo $pricePost; ?> Kč</td></tr>
 				</table>		
       		
       			<div class="priceTotal" id="priceTotal">
@@ -264,7 +264,7 @@ if (count($values)) {
 
 			<hr />
 
-			<div class="orderInfo">Objednávka Vám bude potvrzena emailem a zaslána na dobírkou na výše uvedenou adresu.</div>
+			<div class="orderInfo">Objednávka Vám bude potvrzena emailem a zaslána na dobírku na výše uvedenou adresu.</div>
 			<input type="submit" name='sent' value='Zakoupit' class="btn-primary" /><br/>
 		</form>
 		<hr />

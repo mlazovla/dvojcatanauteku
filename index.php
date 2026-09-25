@@ -280,7 +280,7 @@ $s = loadStrings(connectDatabase());
 
 
     .main section.page3 {
-      background-image: url('img/bg3.jpg');
+      background-image: url('img/bg3_new.jpg');
       background-size:cover;
       background-position: center bottom;
       color: white;
@@ -426,15 +426,15 @@ $s = loadStrings(connectDatabase());
 		  border-right: 2px solid #CCCCCC;
 		  font-weight: 800;
 		  cursor: pointer;
-		  box-shadow: 0px 2px 2px rgba(50,50,70,0.5);
-		  font-color: #333;
-		  text-shadow: 0px -1px 0px rgba(255,255,255,0.5), 0px 1px 0px rgba(50,50,55,0.2);
+		  box-shadow: 0 2px 2px rgba(50,50,70,0.5);
+		  color: #333;
+		  text-shadow: 0 -1px 0px rgba(255,255,255,0.5), 0px 1px 0px rgba(50,50,55,0.2);
 	  }
 	  .button:hover {
 		  border-top: 2px solid #AAAAAA;
 		  border-bottom: 2px solid white;
 		  box-shadow: 0px 2px 2px rgba(50,50,70,0.5) inset;
-		  font-color: black;
+		  color: black;
 	  }
 	  .circle {
 		  border-radius: 100%;
@@ -445,6 +445,22 @@ $s = loadStrings(connectDatabase());
 		  padding-top: 4px;
 		  font-size: 20px
 	  }
+        .btn-primary {
+            text-transform: uppercase;
+            background-color: royalblue;
+            color: white;
+            border: 1px solid darkblue;
+            font-weight: bold;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+        .btn-primary:hover {
+            cursor: pointer;
+            box-shadow: 0 0 3px rgba(0,0,0,0.4);
+        }
+
+
 
   </style>
 	<script>

@@ -1,5 +1,5 @@
 .DS_Store
-/content
+.idea
 /edit/settings.php
 /zakoupit/objednavky
-.idea
+/backup_*.sql

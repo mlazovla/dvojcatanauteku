@@ -5,7 +5,7 @@ function connectDatabase()
 	include("settings.php");
 
 	// WEB
-	//$mysqli = new mysqli($MYSQL_SETTINGS['host'], $MYSQL_SETTINGS['user'], $MYSQL_SETTINGS['password'], $MYSQL_SETTINGS['db']);
+	$mysqli = new mysqli($MYSQL_SETTINGS['host'], $MYSQL_SETTINGS['user'], $MYSQL_SETTINGS['password'], $MYSQL_SETTINGS['db']);
 	
 	if (!isset($mysqli) || $mysqli->connect_errno) {
 		// Try Localhost
